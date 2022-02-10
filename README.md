@@ -63,7 +63,9 @@ Generally scripting support is added by:
     - Define plugin format
     - API to find plugins in common locations
     - API to load those plugins into a ScriptContext and call lifecycle events
-    - API to allow plugins to subscribe to events such as documents and windows opening and closing. 
+    - API to allow plugins to subscribe to events such as documents and windows opening and closing.
+    - API for plugins to contribute "commands". Maybe even standard UI that apps can use to browse and execute plugin contributed commands.
+    - Note sure these ideas all make sense, but it would be pretty great to just include a lib and get all this for free.
 
 - Figure out some sane way to generate documentation. Ideally each `JSExport` protocol can be documented in Swift and then a script can extract that documentation and export in form suitable for JavaScript development.
 
