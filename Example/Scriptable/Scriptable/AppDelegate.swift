@@ -4,6 +4,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        _ = AppScriptContext.shared
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

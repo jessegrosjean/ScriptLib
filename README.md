@@ -18,7 +18,14 @@ To try out what's here:
 
 1. Open and run the Example app.
 
-2. Type `app.version` in the apps window an press Return. You should see `1.0`.
+  Each app Window has a text area that acts as a very simple script console. You can type the follow scripts into that window. On the other hand you'll have a much better experience if you setup Safari's script console to do this. You can do that by:
+  
+    1. Open Safari
+    2. Open the preferences and enable under "Advanced" the "Develop menu bar
+    3. You should now see a new "Develop" menu item in Safari. Check the options "Automatically Show Web Inspector for JSContexts" and "Automatically Pause Connecting to JSContexts". You can also choose to open an existing context. When the example app is running there will be a context named "Scriptable ScriptContext".
+    4. Now when you run the example app Safari should open a JavaScript console for the example apps script context. The following instructions should work about the same, but you'll have a nicer experience with autocomplete and better ways to inspect objects.
+
+2. Type `app.version` in the apps window (on Safari Console) an press Return. You should see `1.0`.
 
 2. Enter `app.beep()`. It should beep!
 
@@ -26,7 +33,7 @@ To try out what's here:
 
 4. Enter `app.documents[0].text`. You should see "Hello World".
 
-5. Enter `app.documents[0].text = "Hello, Hello World". You have assigned a new text value to the document.
+5. Enter `app.documents[0].text = "Hello, Hello World"`. You have assigned a new text value to the document.
 
 That's about it! :)
 
