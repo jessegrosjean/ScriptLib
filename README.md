@@ -2,7 +2,7 @@
 
 Early and in progress scripting suite for Swift apps.
 
-The goal is to create an API like AppleScript's standard suite, except implement using an embedded JavaScriptCore context. Manny macOS apps use this approach, but it looks like everyone is building there own solution. (Please let me know if there are open source solutions that I've missed). Here are some apps and related JavaScript API's to be inspired by:
+The goal is to create an API like AppleScript's standard suite, except implement using an embedded JavaScriptCore context. Manny macOS apps use this approach, but it looks like everyone is building their own solution. (Please let me know if there are open source solutions that I've missed). Here are some apps and related JavaScript API's to be inspired by:
 
 - [Drafts](https://docs.getdrafts.com/docs/actions/scripting)
 - [Noteplan](https://help.noteplan.co/article/65-commandbar-plugins)
@@ -18,14 +18,17 @@ To try out what's here:
 
 1. Open and run the Example app.
 
-  Each app Window has a text area that acts as a very simple script console. You can type the follow scripts into that window. On the other hand you'll have a much better experience if you setup Safari's script console to do this. You can do that by:
+    Each app window has a text area that acts as a very simple script console. You can type the follow scripts into that window. On the other hand you'll have a much better experience if you setup Safari's script console to do this instead of using the in app script console. You setup Safari's script console like this:
   
     1. Open Safari
     2. Open the preferences and enable under "Advanced" the "Develop menu bar
-    3. You should now see a new "Develop" menu item in Safari. Check the options "Automatically Show Web Inspector for JSContexts" and "Automatically Pause Connecting to JSContexts". You can also choose to open an existing context. When the example app is running there will be a context named "Scriptable ScriptContext".
+    3. You should now see a new "Develop" menu item in Safari. Check the options "Automatically Show Web Inspector for JSContexts" and "Automatically Pause Connecting to JSContexts". With these options a new Safari window will open when you open the example app.
+    
+        You can also choose to open an existing context manually from Safari. When the example app is running there will be a context named "Scriptable ScriptContext" in Safari's "Develop" menu. Choose that to open the console.
+        
     4. Now when you run the example app Safari should open a JavaScript console for the example apps script context. The following instructions should work about the same, but you'll have a nicer experience with autocomplete and better ways to inspect objects.
 
-2. Type `app.version` in the apps window (on Safari Console) an press Return. You should see `1.0`.
+2. Type `app.version` in the apps window (on Safari Console) and press Return. You should see `1.0`.
 
 2. Enter `app.beep()`. It should beep!
 
