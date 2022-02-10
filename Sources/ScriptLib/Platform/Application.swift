@@ -16,7 +16,20 @@ extension NSApplication {
     public static func beep() {
         NSSound.beep()
     }
-    
+
+    public func open(_ url: URL, _ callback: @escaping (Bool) -> ()) {
+        let configuration = NSWorkspace.OpenConfiguration()
+        configuration.promptsUserIfNeeded = true
+        NSWorkspace.shared.open(
+            url,
+            configuration: configuration) { app, error in
+                if error != nil {
+                    callback(false)
+                } else {
+                    callback(true)
+                }
+            }
+    }
 }
 
 #else

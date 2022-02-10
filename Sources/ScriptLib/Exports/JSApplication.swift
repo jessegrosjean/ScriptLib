@@ -5,7 +5,8 @@ import JavaScriptCore
     var version: String { get }
     var windows: [JSWindow] { get }
     var documents: [JSDocument] { get }
-    func open(_ url: JSURL, _ callback: JSValue)
+    func documentForURL(_ url: JSURL) -> JSDocument?
+    func openURL(_ url: JSURL, _ callback: JSValue)
     func beep()
 }
 
@@ -48,22 +49,21 @@ import JavaScriptCore
             context.wrapDocument(document)
         }
     }
+    
+    public func documentForURL(_ url: JSURL) -> JSDocument? {
+        guard
+            let context = context,
+            let document = Application.shared.document(for: url.inner)
+        else {
+            return nil
+        }
+        return context.wrapDocument(document)
+    }
 
-    public func open(_ url: JSURL, _ callback: JSValue) {
-        callback.call(withArguments: [])
-        /*
-        let configuration = NSWorkspace.OpenConfiguration()
-        configuration.promptsUserIfNeeded = true
-        NSWorkspace.shared.open(
-            [url.inner],
-            withApplicationAt: Bundle.main.bundleURL,
-            configuration: configuration) { app, error in
-                if let context = self.context, let document = Application.shared.document(for: url.inner) {
-                    callback.call(withArguments: [context.wrapDocument(document)])
-                } else {
-                    callback.call(withArguments: [])
-                }
-            }*/
+    public func openURL(_ url: JSURL, _ callback: JSValue) {
+        Application.shared.open(url.inner) { result in
+            callback.call(withArguments: [result])
+        }
     }
 
     public func beep() {

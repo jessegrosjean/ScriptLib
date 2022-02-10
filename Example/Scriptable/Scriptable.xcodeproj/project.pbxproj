@@ -106,6 +106,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4350E3EE27B590D700520233 /* PBXTargetDependency */,
 			);
 			name = Scriptable;
 			packageProductDependencies = (
@@ -174,6 +175,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4350E3EE27B590D700520233 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 4350E3ED27B590D700520233 /* ScriptLib */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		43A8E80A27B565DE00D5CC2A /* Main.storyboard */ = {
@@ -383,6 +391,10 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		4350E3E527B569B500520233 /* ScriptLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScriptLib;
+		};
+		4350E3ED27B590D700520233 /* ScriptLib */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ScriptLib;
 		};
